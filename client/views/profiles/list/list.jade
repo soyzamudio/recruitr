@@ -1,0 +1,4 @@
+h4 List
+
+div(ng-repeat='profile in profiles') 
+  a(ui-sref='profiles.show({userId: profile._id})') {{profile.firstName}}

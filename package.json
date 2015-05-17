@@ -1,0 +1,63 @@
+{
+  "name": "angular-prototype",
+  "description": "Angular Prototype Application",
+  "homepage": "https://github.com/coding-house-jan2015/angular-prototype",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "keywords": [
+    "gulp",
+    "jshint",
+    "jscs",
+    "server",
+    "hapi",
+    "node",
+    "mongo",
+    "mongoose",
+    "angular"
+  ],
+  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coding-house-jan2015/angular-prototype.git"
+  },
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server/index.js",
+    "localhost": "MONGO_URL=mongodb://localhost/recruitr-prod PORT=3333 nodemon -e js,jade server/index.js",
+    "preinstall": "rm -rf node_modules public",
+    "postinstall": "bower install && gulp build",
+    "test": "MONGO_URL=mongodb://localhost/recruitr-test lab -l -v -m 5000 test/unit test/acceptance"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "babel": "^5.4.3",
+    "bcrypt": "^0.8.3",
+    "good": "^6.1.2",
+    "good-console": "^5.0.0",
+    "hapi": "^8.4.0",
+    "hapi-auth-jwt": "^2.1.2",
+    "joi": "^6.4.1",
+    "jwt-simple": "^0.3.0",
+    "lodash": "^3.8.0",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.3",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "chai": "^2.3.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-copy": "0.0.2",
+    "gulp-jade": "^1.0.0",
+    "gulp-jshint": "^1.10.0",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-watch": "^4.2.4",
+    "jshint-stylish": "^1.0.2",
+    "lab": "^5.8.1"
+  }
+}

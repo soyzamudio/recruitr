@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-md-4.col-md-offset-2
+      .page-header Log In
+      .form-group
+        input.form-control(type='email', ng-model='loginForm.email', placeholder='Email')
+      .form-group
+        input.form-control(type='password', ng-model='loginForm.password', placeholder='Password')
+      .form-group
+        button.btn.btn-default.pull-right(ng-click='loginUser()') Log In
+    .col-md-4
+      .page-header Sign Up
+      .form-group
+        input.form-control(type='text', ng-model='signupForm.firstName', placeholder='First Name')
+      .form-group
+        input.form-control(type='text', ng-model='signupForm.lastName', placeholder='Last Name')
+      .form-group
+        input.form-control(type='text', ng-model='signupForm.company', placeholder='Company')
+      .form-group
+        input.form-control(type='email', ng-model='signupForm.email', placeholder='Email')
+      .form-group
+        input.form-control(type='password', ng-model='signupForm.pass', placeholder='Password')
+      .form-group
+        input.form-control(type='password', ng-model='signupForm.veriPass', placeholder='Verify Password')
+      .form-group
+        button.btn.btn-default.pull-right(ng-click='signup()') Register

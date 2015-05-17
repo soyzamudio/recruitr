@@ -1,0 +1,20 @@
+h5 User Create
+
+.container(ng-if='successfull')
+  div {{createdUser}}
+
+.container(ng-if='!successfull')
+  .form-group
+    input.form-control(type='text', ng-model='create.firstName', placeholder='First Name')
+  .form-group
+    input.form-control(type='text', ng-model='create.lastName', placeholder='Last Name')
+  .form-group
+    input.form-control(type='text', ng-model='create.company', placeholder='Company')
+  .form-group
+    input.form-control(type='email', ng-model='create.email', placeholder='Email')
+  .form-group
+    input.form-control(type='password', ng-model='create.pass', placeholder='Password')
+  .form-group
+    input.form-control(type='password', ng-model='create.veriPass', placeholder='Verify Password')
+  .form-group
+    button.btn.btn-default.pull-right(ng-click='createUser(create)') Create User

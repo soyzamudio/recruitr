@@ -1,0 +1,23 @@
+nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(ui-sref='home') Recruitr
+      
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right(ng-if='user')
+        li: a.hvr-underline-reveal(href='#', ng-click='logout()') Logout
+      ul.nav.navbar-nav.navbar-right(ng-if='!user')
+        li: a.hvr-underline-reveal(ui-sref='user') Sign up/Sign In
+      ul.nav.navbar-nav.navbar-right
+        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
+      ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')
+        li: a.hvr-underline-reveal(ui-sref='users.create') Add User
+        li: a.hvr-underline-reveal(ui-sref='users.list') Users
+        li: a.hvr-underline-reveal(ui-sref='profiles.create') Add Profile
+      ul.nav.navbar-nav.navbar-right
+        li: a.hvr-underline-reveal(ui-sref='home') Home
