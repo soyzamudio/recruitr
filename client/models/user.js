@@ -8,8 +8,12 @@ angular.module('angular-prototype')
     }
 
     function createUser(info) {
-      return $http.post('/users/create', info)
+      return $http.post('/users/create', info);
     }
 
-    return {getAll:getAll, createUser:createUser};
+    function upgrade(info) {
+      return $http.put('/users/upgrade', info);
+    }
+
+    return {getAll:getAll, createUser:createUser, upgrade:upgrade};
   }]);

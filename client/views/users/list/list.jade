@@ -1,3 +1,6 @@
 h5 list users
 
-div(ng-repeat='user in users') {{user.firstName}}
+div(ng-repeat='u in users') 
+  h3 {{u.firstName}}
+  select(ng-options="item for item in ['normal', 'super', 'admin']" ng-model="u.role")
+  button(ng-click='upgrade(u)') Modify

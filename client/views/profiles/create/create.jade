@@ -23,6 +23,7 @@ h5 Create
 .form-group
   input.form-control(type='text', ng-model='student.twitter', placeholder='Twitter')
 .form-group
-  input.form-control(type='text', ng-model='student.image', placeholder='Image')
+  input(type='file' ng-model='student.image' base-sixty-four-input)
+  img(base-sixty-four-image="student.image")
 .form-group
   button.btn.btn-default.pull-right(ng-click='createProfile()') Create Profile

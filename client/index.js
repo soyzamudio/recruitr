@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer'])
+angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer', 'naif.base64'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-  .state('home', {url:'/', templateUrl:'/views/general/home.html'})
+  .state('home', {url:'/', templateUrl:'/views/general/home.html', controller: 'HomeController'})
   .state('user', {url:'/user', templateUrl:'/views/user/user.html', controller: 'UserController'})
 
   .state('profiles', {url: '/profiles', templateUrl:'/views/profiles/profiles.html', abstract: true})

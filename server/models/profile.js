@@ -11,7 +11,7 @@ var profileSchema = mongoose.Schema({
   exposed: Array,
   interests: Array,
   education: Array,
-  image: {type: String, required: true},
+  image: {type: Object, required: true},
   github: String,
   stackoverflow: String,
   linkedin: String,

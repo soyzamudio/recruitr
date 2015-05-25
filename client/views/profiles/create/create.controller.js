@@ -8,7 +8,7 @@ angular.module('angular-prototype')
   $scope.createProfile = function() {
     Profile.createProfile($scope.student)
     .then(function(response) {
-      $state.go('profiles.show', {userId: response.data._id});
+      $state.go('profiles.show', {userId: response.data.profile._id});
     });
   };
 

@@ -8,4 +8,8 @@ angular.module('angular-prototype')
     $scope.users = response.data.users;
   });
 
+  $scope.upgrade = function(user) {
+    User.upgrade(user);
+  };
+
 }]);
