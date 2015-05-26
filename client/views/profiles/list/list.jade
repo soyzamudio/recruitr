@@ -8,4 +8,4 @@
 
 .container
   .row 
-    div(al-card, ng-repeat='profile in profiles | filter: {firstName: searchBar}', profile='profile')
+    .text-capitalize(al-card, ng-repeat='profile in profiles | filter: {firstName: searchBar}', profile='profile', index='$index', list='profiles')

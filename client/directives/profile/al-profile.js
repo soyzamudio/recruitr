@@ -11,20 +11,18 @@ angular.module('angular-prototype')
     admin: '='
   };
   o.link = function($scope, element, attrs) {};
-  o.controller = ['$rootScope', '$scope', function($rootScope, $scope) {
+  o.controller = ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
     $scope.super = false;
     $scope.normal = true;
-
     checkViewer();
-
     function checkViewer() {
       switch ($scope.admin.role) {
         case 'admin' || 'super': $scope.super = true; break;
         default: break;
       }
     }
-
-    console.log($scope.super);
+    $scope.list = $state.params.list;
+    $scope.index = $state.params.index;
   }];
 
   return o;

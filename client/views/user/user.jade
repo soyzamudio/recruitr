@@ -2,9 +2,10 @@
   .row
     .col-md-7.col-md-offset-2
       .page-header Log In
-      .form-group
-        input.form-control(type='email', ng-model='loginForm.email', placeholder='Email')
-      .form-group
-        input.form-control(type='password', ng-model='loginForm.password', placeholder='Password')
-      .form-group
-        button.btn.btn-default.pull-right(ng-click='loginUser()') Log In
+      form(ng-submit='loginUser()')
+        .form-group
+          input.form-control(type='email', ng-model='loginForm.email', placeholder='Email')
+        .form-group
+          input.form-control(type='password', ng-model='loginForm.password', placeholder='Password')
+        .form-group
+          button.btn.btn-default.pull-right Log In
