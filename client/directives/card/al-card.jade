@@ -1,0 +1,7 @@
+.col-md-3
+  .card
+    .avatar
+      img(base-sixty-four-image="profile.image")
+    .content
+      h4 {{profile.firstName}} {{profile.lastName}}
+      h4: a(ui-sref='profiles.show({userId: profile._id})'): button.btn.btn-default Learn More

@@ -16,6 +16,7 @@
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.3.0",
     "satellizer": "~0.10.1",
-    "angular-base64-upload": "~0.0.8"
+    "angular-base64-upload": "~0.0.8",
+    "sweetalert": "~1.0.1"
   }
 }

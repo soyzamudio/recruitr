@@ -12,12 +12,11 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
       ul.nav.navbar-nav.navbar-right(ng-if='user')
         li: a.hvr-underline-reveal(href='#', ng-click='logout()') Logout
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
-        li: a.hvr-underline-reveal(ui-sref='user') Sign up/Sign In
-      ul.nav.navbar-nav.navbar-right
-        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
+        li: a.hvr-underline-reveal(ui-sref='user') Log In
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')
         li: a.hvr-underline-reveal(ui-sref='users.create') Add User
         li: a.hvr-underline-reveal(ui-sref='users.list') Users
         li: a.hvr-underline-reveal(ui-sref='profiles.create') Add Profile
+        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
       ul.nav.navbar-nav.navbar-right
         li: a.hvr-underline-reveal(ui-sref='home') Home

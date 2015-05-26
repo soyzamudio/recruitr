@@ -1,6 +1,3 @@
-//- div(ng-repeat='profile in profiles') 
-//-   a(ui-sref='profiles.show({userId: profile._id})') {{profile.firstName}}
-//-   img(base-sixty-four-image="profile.image")
 .container
   .form-group
     .input-group
@@ -9,29 +6,6 @@
         button.btn.btn-default(type="button", ng-click='searchProfile()')
           span.glyphicon.glyphicon-search
 
-//- .container
-//-   table.table.table-bordered.table-striped
-//-     thead
-//-       tr
-//-         td
-//-           | Sushi Roll
-//-         td
-//-           | Fish Type
-//-         td
-//-           | Taste Level
-//-     tbody
-//-       tr(ng-repeat="profile in profiles")
-//-         td {{ profile.firstName }}
-//-         td {{ roll.fish }}
-//-         td {{ roll.tastiness }}
-
-
 .container
-  .row
-    .col-md-3(ng-repeat='profile in profiles | filter: {firstName: searchBar}') 
-      .card
-        .avatar
-          img(base-sixty-four-image="profile.image")
-        .content
-          h4 {{profile.firstName}} {{profile.lastName}}
-          h4: a(ui-sref='profiles.show({userId: profile._id})'): button.btn.btn-default Learn More
+  .row 
+    div(al-card, ng-repeat='profile in profiles | filter: {firstName: searchBar}', profile='profile')

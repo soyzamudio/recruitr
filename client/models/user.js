@@ -15,5 +15,9 @@ angular.module('angular-prototype')
       return $http.put('/users/upgrade', info);
     }
 
-    return {getAll:getAll, createUser:createUser, upgrade:upgrade};
+    function generatePassword() {
+      return Math.random().toString(36).slice(-8);
+    }
+
+    return {getAll:getAll, createUser:createUser, upgrade:upgrade, generatePassword: generatePassword};
   }]);

@@ -8,10 +8,7 @@ var User;
 
 var userSchema = mongoose.Schema({
     email: {type: String, required: true},
-    password: {type: String, required: true},
-    company: {type: String, required: true},
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
+    password: {type: String},
     role: {type: String, default: 'normal'},
     createdAt: {type: Date, default: Date.now, required: true}
 });
@@ -30,8 +27,8 @@ userSchema.statics.register = function(o, cb){
   var self = o;
   User.findOne({email: self.email}, function(err, u) {
     if (u) { return cb(true); }
-    var user = new User(o);
-    user.password = bcrypt.hashSync(o.password, 8);
+    var user = new User(self);
+    user.password = bcrypt.hashSync(self.password, 8);
     user.save(cb);
   });
 };

@@ -5,15 +5,16 @@ h5 Create
 .form-group
   input.form-control(type='text', ng-model='student.lastName', placeholder='Last Name')
 .form-group
-  input.form-control(type='text', ng-model='student.locations', placeholder='Locations')
+  input.form-control(type='text', ng-model='student.location', placeholder='Location')
+.form-group
+  label Relocation?
+  input(type='checkbox', ng-model='student.relocate')
 .form-group
   input.form-control(type='text', ng-model='student.skills', placeholder='Skills')
 .form-group
   input.form-control(type='text', ng-model='student.exposed', placeholder='Exposed')
 .form-group
   input.form-control(type='text', ng-model='student.interests', placeholder='Interests')
-.form-group
-  input.form-control(type='text', ng-model='student.education', placeholder='Education')
 .form-group
   input.form-control(type='text', ng-model='student.github', placeholder='Github')
 .form-group
@@ -27,3 +28,19 @@ h5 Create
   img(base-sixty-four-image="student.image")
 .form-group
   button.btn.btn-default.pull-right(ng-click='createProfile()') Create Profile
+
+
+//- firstName: {type: String, required: true},
+//- lastName: {type: String, require: true},
+//- location: String,
+//- relocate: {type: Boolean},
+//- skills: {type: Array, required: true},
+//- exposed: Array,
+//- interests: Array,
+//- education: Array,
+//- image: {type: Object, required: true},
+//- github: String,
+//- stackoverflow: String,
+//- linkedin: String,
+//- twitter: String,
+//- createdAt: {type: Date, default: Date.now, required: true}

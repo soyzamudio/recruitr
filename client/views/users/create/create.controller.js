@@ -1,25 +1,28 @@
 'use strict';
 
 angular.module('angular-prototype')
-.controller('UsersCreateController', ['$scope', 'User', function($scope, User) {
-  $scope.successfull = false;
+.controller('UsersCreateController', ['$scope', 'User', '$window', '$state', function($scope, User, $window, $state) {
 
   $scope.createUser = function(user) {
-    if (user.pass === user.veriPass) {
-      User.createUser({
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        company: user.company,
-        password: user.pass,
-        role: 'super'
+    User.createUser({
+      email: user.email,
+      password: user.pass,
+      role: 'super'
+    })
+    .then(function(response) {
+      $scope.createdUser = response.data.user;
+      $scope.createdUser.password = user.pass;
+      $window.swal({
+        title: 'Success!',
+        text: 'User (' + response.data.user.email + ') was created.',
+        type: 'success',
+        showCancelButton: false,
+        confirmButtonColor: "#3996c6",
+        confirmButtonText: "Ok!"
+      }, function() {
+        $state.go('users.list');
       })
-      .then(function(response) {
-        $scope.createdUser = response.data.user;
-        $scope.createdUser.password = user.pass;
-        $scope.successfull = true;
-      });
-    }
+    });
   };
 
 }]);

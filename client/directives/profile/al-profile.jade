@@ -1,0 +1,51 @@
+.container
+  .row
+    .col-md-1
+      a.fa.fa-chevron-left.fa-2x
+    .col-md-10
+    
+      .col-md-12
+        .col-md-3.text-center#photo
+          img.img-circle(base-sixty-four-image="userProfile.image")
+        .col-md-4#info
+          h3 
+            span {{userProfile.firstName}} 
+            span(ng-class='{blur: !super}') {{userProfile.lastName}}
+          h4 {{userProfile.location}}
+          h4 Relocation: 
+            span(ng-if='userProfile.relocate').fa.fa-check-circle-o
+            span(ng-if='!userProfile.relocate').fa.fa-circle-o
+        .col-md-4#contact.text-right(ng-class='{blur: !super}')
+          h5 Twitter &nbsp;
+            span.fa.fa-twitter
+          h5 LinkedIn &nbsp;
+            span.fa.fa-linkedin 
+          h5 Github &nbsp;
+            span.fa.fa-github 
+          h5 Stackoverflow &nbsp;
+            span.fa.fa-stack-overflow
+          h5 Website &nbsp;
+            span.fa.fa-globe
+            
+            
+      .col-md-12#summary
+        .page-header Summary
+        p {{userProfile.summary}}
+        
+        
+      .col-md-4.data
+        .page-header Skills
+        .col-md-12
+          ul: li.item.skill(ng-repeat='skill in userProfile.skills') {{skill}}
+      .col-md-4.data
+        .page-header Exposed
+        .col-md-12
+          ul: li.item.expose(ng-repeat='expose in userProfile.exposed') {{expose}}
+      .col-md-4.data
+        .page-header Interests
+        .col-md-12
+          ul: li.item.interest(ng-repeat='interest in userProfile.interests') {{interest}}
+        
+        
+    .col-md-1
+      a.fa.fa-chevron-right.fa-2x

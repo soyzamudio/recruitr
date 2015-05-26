@@ -43,6 +43,7 @@
     "lodash": "^3.8.0",
     "moment": "^2.10.3",
     "mongoose": "^4.0.3",
+    "node-mandrill": "^1.0.1",
     "request": "^2.55.0"
   },
   "devDependencies": {

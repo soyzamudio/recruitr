@@ -1,1 +1,7 @@
-h1 Home
+.container
+  .row
+    .col-md-7.col-md-offset-2.text-center
+      .input-group(ng-if='!user')
+        input.form-control(type='text', ng-model='email', placeholder='Enter your email')
+        span.input-group-addon.btn.btn-default(style='background: white', ng-click='createAccount(email)') View Profiles
+      a.btn.btn-default(ng-if='user', ui-sref='profiles.list') View Profiles
