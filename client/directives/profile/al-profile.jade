@@ -1,9 +1,9 @@
-.container
+.container(ng-cloak)
   .row
     .col-md-1.text-center
-      div(ng-if='list[index-1]')
-        img.img-circle.carousel-image(base-sixty-four-image='list[index-1].image')
-        h6: a(ui-sref='profiles.show({userId: list[index-1]._id, index: index-1, list: list})'): strong Prev
+      div(ng-if='list[index - 1]')
+        img.img-circle.carousel-image(base-sixty-four-image='list[index - 1].image')
+        h6: a(ui-sref='profiles.show({userId: list[index - 1]._id, index: (index - 1).toString(), list: list})'): strong {{list[index - 1].firstName}}
     .col-md-10
     
       .col-md-12
@@ -50,6 +50,6 @@
         
         
     .col-md-1.text-center
-      div(ng-if='list[index+1]')
-        img.img-circle.carousel-image(base-sixty-four-image='list[index+1].image')
-        h6: a(ui-sref='profiles.show({userId: list[index+1]._id, index: index+1, list: list})'): strong Next
+      div(ng-if='list[index + 1]')
+        img.img-circle.carousel-image(base-sixty-four-image='list[index + 1].image')
+        h6: a(ui-sref='profiles.show({userId: list[index + 1]._id, index: (index + 1).toString(), list: list})'): strong {{list[index + 1].firstName}}

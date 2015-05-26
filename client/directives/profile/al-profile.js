@@ -22,7 +22,7 @@ angular.module('angular-prototype')
       }
     }
     $scope.list = $state.params.list;
-    $scope.index = $state.params.index;
+    $scope.index = $state.params.index * 1;
   }];
 
   return o;
