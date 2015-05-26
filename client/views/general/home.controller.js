@@ -13,7 +13,7 @@ angular.module('angular-prototype')
     $scope.newUser = {
       email: email,
       password: User.generatePassword()
-    }
+    };
     $auth.signup($scope.newUser).then(login);
   };
 

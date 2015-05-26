@@ -1,21 +1,22 @@
 .container
   .row
-    .col-md-1.text-center(ng-if='list[index-1]')
-      img.img-circle.carousel-image(base-sixty-four-image='list[index-1].image')
-      h6: a(ui-sref='profiles.show({userId: list[index-1]._id, index: index-1, list: list})'): strong Prev
+    .col-md-1.text-center
+      div(ng-if='list[index-1]')
+        img.img-circle.carousel-image(base-sixty-four-image='list[index-1].image')
+        h6: a(ui-sref='profiles.show({userId: list[index-1]._id, index: index-1, list: list})'): strong Prev
     .col-md-10
     
       .col-md-12
         .col-md-3.text-center#photo
           img.img-circle(base-sixty-four-image="userProfile.image")
-        .col-md-4#info
+        .col-md-5#info
           h3 
             span {{userProfile.firstName}} 
             span(ng-class='{blur: !super}') {{userProfile.lastName}}
-          h4 {{userProfile.location}}
-          h4 Relocation: 
-            span(ng-if='userProfile.relocate').fa.fa-check-circle-o
-            span(ng-if='!userProfile.relocate').fa.fa-circle-o
+          h5 {{userProfile.location}}
+          h5 Relocation 
+            span(ng-if='userProfile.relocate') ok!
+            span(ng-if='!userProfile.relocate') not ok!
         .col-md-4#contact.text-right(ng-class='{blur: !super}')
           h5 Twitter &nbsp;
             span.fa.fa-twitter
@@ -48,6 +49,7 @@
           ul: li.item.interest(ng-repeat='interest in userProfile.interests') {{interest}}
         
         
-    .col-md-1.text-center(ng-if='list[index+1]')
-      img.img-circle.carousel-image(base-sixty-four-image='list[index+1].image')
-      h6: a(ui-sref='profiles.show({userId: list[index+1]._id, index: index+1, list: list})'): strong Next
+    .col-md-1.text-center
+      div(ng-if='list[index+1]')
+        img.img-circle.carousel-image(base-sixty-four-image='list[index+1].image')
+        h6: a(ui-sref='profiles.show({userId: list[index+1]._id, index: index+1, list: list})'): strong Next

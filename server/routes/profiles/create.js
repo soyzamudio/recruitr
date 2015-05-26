@@ -13,8 +13,8 @@ module.exports = {
     profile.save(function() {
       Autocomplete.findOne({name: 'auto'}, function(err, auto) {
         if (!auto) {
-          var auto = new Autocomplete({skills: profile.skills});
-          auto.save(function() {
+          var newAuto = new Autocomplete({skills: profile.skills});
+          newAuto.save(function() {
             reply({profile: profile});
           });
         } else {
@@ -25,7 +25,7 @@ module.exports = {
           auto.skills = _.uniq(auto.skills);
           auto.save(function() {
             reply({profile: profile});
-          })
+          });
         }
       });
     });

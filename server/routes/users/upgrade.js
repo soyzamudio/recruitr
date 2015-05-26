@@ -1,7 +1,6 @@
 'use strict';
 
 var User = require('../../models/user');
-var Joi = require('joi');
 
 module.exports = {
   auth: false,

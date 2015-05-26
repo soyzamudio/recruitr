@@ -17,11 +17,11 @@ angular.module('angular-prototype')
         text: 'User (' + response.data.user.email + ') was created.',
         type: 'success',
         showCancelButton: false,
-        confirmButtonColor: "#3996c6",
-        confirmButtonText: "Ok!"
+        confirmButtonColor: '#3996c6',
+        confirmButtonText: 'Ok!'
       }, function() {
         $state.go('users.list');
-      })
+      });
     });
   };
 

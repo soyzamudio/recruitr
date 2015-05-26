@@ -11,7 +11,7 @@ angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer', 'n
   .state('profiles', {url: '/profiles', templateUrl:'/views/profiles/profiles.html', abstract: true})
   .state('profiles.create', {url: '/create', templateUrl:'/views/profiles/create/create.html', controller: 'ProfilesCreateController'})
   .state('profiles.list', {url: '', templateUrl:'/views/profiles/list/list.html', controller: 'ProfilesListController'})
-  .state('profiles.show', {url: '/{userId}', templateUrl:'/views/profiles/show/show.html', controller: 'ProfilesShowController', params: { index: null, list: null }})
+  .state('profiles.show', {url: '/{userId}', params: { index: null, list: null }, templateUrl:'/views/profiles/show/show.html', controller: 'ProfilesShowController'})
 
   .state('users', {url: '/users', templateUrl:'/views/users/users.html', abstract: true})
   .state('users.list', {url: '', templateUrl:'/views/users/list/list.html', controller: 'UsersListController'})

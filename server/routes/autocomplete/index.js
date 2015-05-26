@@ -9,4 +9,4 @@ module.exports = {
       else { reply({auto:auto}); }
     });
   }
-}
+};

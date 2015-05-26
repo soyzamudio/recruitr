@@ -11,9 +11,14 @@ angular.module('angular-prototype')
     index: '=',
     list: '='
   };
-  o.link = function($scope, element, attrs) {};
-  o.controller = ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
-    
+  o.link = function() {};
+  o.controller = ['$scope', '$state', function($scope, $state) {
+    $scope.goToProfile = function(profile, index, list) {
+      console.log(profile);
+      console.log(index);
+      console.log(list);
+      $state.go('profiles.show', {userId: profile._id, index: index, list: list});
+    };
   }];
 
   return o;

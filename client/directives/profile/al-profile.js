@@ -10,8 +10,8 @@ angular.module('angular-prototype')
     userProfile: '=',
     admin: '='
   };
-  o.link = function($scope, element, attrs) {};
-  o.controller = ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
+  o.link = function() {};
+  o.controller = ['$scope', '$state', function($scope, $state) {
     $scope.super = false;
     $scope.normal = true;
     checkViewer();

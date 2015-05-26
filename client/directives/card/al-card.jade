@@ -7,4 +7,4 @@
       h6
         span.skill(ng-repeat='skill in profile.skills') {{skill}}
       h4
-        button.btn.btn-default(ui-sref='profiles.show({userId: profile._id, index: index, list: list})') Learn More
+        button.btn.btn-default(ng-click='goToProfile(profile, index, list)') Learn More
