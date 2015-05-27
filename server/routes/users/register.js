@@ -14,6 +14,7 @@ module.exports = {
   },
   handler: function(request, reply){
     User.register(request.payload, function(err, user) {
+      user.random = request.payload.password;
       Email.email(user, function(err) {
         if (err) { return reply().code(400); }
         var token = user.token();

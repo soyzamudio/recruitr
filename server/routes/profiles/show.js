@@ -17,8 +17,7 @@ function checkViewer(user, profile) {
     profile.lastName = 'Contact Us';
     profile.experience = null;
     profile.twitter = null;
-    profile.linkedIn = null;
-    profile.stackoverflow = null;
+    profile.linkedin = null;
     profile.github = null;
   }
   return profile;

@@ -3,7 +3,7 @@
     .col-md-1.text-center
       div(ng-if='list[index - 1]')
         img.img-circle.carousel-image(base-sixty-four-image='list[index - 1].image')
-        h6: a(ui-sref='profiles.show({userId: list[index - 1]._id, index: (index - 1).toString(), list: list})'): strong {{list[index - 1].firstName}}
+        h6: a(ui-sref='profiles.show({userId: list[index - 1]._id, index: (index - 1).toString(), list: list})'): strong Prev
     .col-md-10
     
       .col-md-12
@@ -17,17 +17,15 @@
           h5 Relocation 
             span(ng-if='userProfile.relocate') ok!
             span(ng-if='!userProfile.relocate') not ok!
-        .col-md-4#contact.text-right(ng-class='{blur: !super}')
-          h5 Twitter &nbsp;
-            span.fa.fa-twitter
-          h5 LinkedIn &nbsp;
-            span.fa.fa-linkedin 
-          h5 Github &nbsp;
-            span.fa.fa-github 
-          h5 Stackoverflow &nbsp;
-            span.fa.fa-stack-overflow
-          h5 Website &nbsp;
-            span.fa.fa-globe
+        .col-md-4#contact.text-right(ng-class='{unclickable: !super}')
+          .page-header(style='margin-top: 0px;') Social Media
+          div(ng-class='{blur: !super}')
+            h5: a(href='{{available(userProfile.linkedin)}}', target='_blank') LinkedIn &nbsp;
+              span.fa.fa-linkedin 
+            h5: a(href='{{available(userProfile.twitter)}}', target='_blank') Twitter &nbsp;
+              span.fa.fa-twitter
+            h5: a(href='{{available(userProfile.github)}}', target='_blank') Github &nbsp;
+              span.fa.fa-github
             
             
       .col-md-12#summary
@@ -47,9 +45,22 @@
         .page-header Interests
         .col-md-12
           ul: li.item.interest(ng-repeat='interest in userProfile.interests') {{interest}}
+          
+      .col-md-12#experience
+        .page-header Experience
+        div(ng-class='{blur: !super}')
+          h3 Title
+          h5 Company
+          p Ad deserunt aliqua enim velit tempor. Consectetur amet laboris ipsum voluptate pariatur et ut. Sint anim velit pariatur qui ex magna labore eu anim cillum. Reprehenderit occaecat incididunt aute duis anim ea ex incididunt sint cillum anim magna. Culpa in ex ad sunt officia ad laboris voluptate magna ad ipsum enim. Mollit adipisicing do voluptate anim esse occaecat irure amet duis. Qui culpa tempor qui voluptate velit.
+          h3 Title
+          h5 Company
+          p Ad deserunt aliqua enim velit tempor. Consectetur amet laboris ipsum voluptate pariatur et ut. Sint anim velit pariatur qui ex magna labore eu anim cillum. Reprehenderit occaecat incididunt aute duis anim ea ex incididunt sint cillum anim magna. Culpa in ex ad sunt officia ad laboris voluptate magna ad ipsum enim. Mollit adipisicing do voluptate anim esse occaecat irure amet duis. Qui culpa tempor qui voluptate velit.
+
         
+      .col-md-12#portfolio
+        .page-header Portfolio
         
     .col-md-1.text-center
       div(ng-if='list[index + 1]')
         img.img-circle.carousel-image(base-sixty-four-image='list[index + 1].image')
-        h6: a(ui-sref='profiles.show({userId: list[index + 1]._id, index: (index + 1).toString(), list: list})'): strong {{list[index + 1].firstName}}
+        h6: a(ui-sref='profiles.show({userId: list[index + 1]._id, index: (index + 1).toString(), list: list})'): strong Next

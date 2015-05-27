@@ -4,11 +4,7 @@
 angular.module('angular-prototype')
 .controller('HomeController',
 ['$rootScope', '$scope', 'Autocomplete', '$auth', 'User', '$window', function($rootScope, $scope, Autocomplete, $auth, User, $window) {
-  Autocomplete.getAutocomplete()
-  .then(function(response) {
-    console.log(response.data);
-  });
-
+  
   $scope.createAccount = function(email) {
     $scope.newUser = {
       email: email,

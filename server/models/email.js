@@ -9,7 +9,7 @@ function email(user, cb) {
       to: [{email: user.email, name: user.firstName + ' ' + user.lastName}],
       from_email: 'no-reply@agilelabs.com',
       subject: 'Thank you for registering',
-      text: message
+      html: message
     }
   }, cb);
 }

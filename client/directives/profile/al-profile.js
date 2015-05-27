@@ -14,15 +14,19 @@ angular.module('angular-prototype')
   o.controller = ['$scope', '$state', function($scope, $state) {
     $scope.super = false;
     $scope.normal = true;
-    checkViewer();
-    function checkViewer() {
-      switch ($scope.admin.role) {
-        case 'admin' || 'super': $scope.super = true; break;
-        default: break;
+    checkViewer($scope.admin.role);
+    function checkViewer(role) {
+      switch (role) {
+        case 'admin': $scope.super = true; break;
+        case 'super': $scope.super = true; break;
       }
     }
     $scope.list = $state.params.list;
     $scope.index = $state.params.index * 1;
+
+    $scope.available = function(link) {
+      return link ? link : '#';
+    };
   }];
 
   return o;

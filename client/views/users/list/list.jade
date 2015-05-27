@@ -1,54 +1,18 @@
 .container
   .form-group
-    input.form-control(type="text", ng-model='searchBar' placeholder="Filter User...")
+    input.form-control(type="text", ng-model='searchBar' placeholder="Search for a user...")
 
-
-//- div(ng-repeat='u in users | filter: {email: searchBar}') 
-//-   h3 {{u.email}}
-//-   select.form-control(ng-options="item for item in ['normal', 'super', 'admin']" ng-model="u.role")
-//-   button.btn.btn-default(ng-click='upgrade(u)') Set Role
-
-table.table.table-hover
-  thead
-    tr
-      th Email
-      th Role
-  tbody
-    tr(ng-repeat='u in users | filter: {email: searchBar}') 
-      td {{u.email}}
-      td
-        .input-group
-          select.form-control.text-capitalize(ng-options="item for item in ['normal', 'super', 'admin']" ng-model="u.role")
-          span.input-group-btn
-            button.btn.btn-default(ng-click='upgrade(u)') Set Role
-
-//- <table class="table table-hover" id="dev-table">
-//- 	<thead>
-//- 		<tr>
-//- 			<th>#</th>
-//- 			<th>First Name</th>
-//- 			<th>Last Name</th>
-//- 			<th>Username</th>
-//- 		</tr>
-//- 	</thead>
-//- 	<tbody>
-//- 		<tr>
-//- 			<td>1</td>
-//- 			<td>Kilgore</td>
-//- 			<td>Trout</td>
-//- 			<td>kilgore</td>
-//- 		</tr>
-//- 		<tr>
-//- 			<td>2</td>
-//- 			<td>Bob</td>
-//- 			<td>Loblaw</td>
-//- 			<td>boblahblah</td>
-//- 		</tr>
-//- 		<tr>
-//- 			<td>3</td>
-//- 			<td>Holden</td>
-//- 			<td>Caulfield</td>
-//- 			<td>penceyreject</td>
-//- 		</tr>
-//- 	</tbody>
-//- </table>
+.container
+  table.table.table-hover
+    thead
+      tr
+        th Email
+        th Role
+    tbody
+      tr(ng-repeat='u in users | filter: {email: searchBar}') 
+        td(style='width: 60%') {{u.email}}
+        td(style='width: 40%')
+          .input-group
+            select.form-control.text-capitalize(ng-options="item for item in ['normal', 'super', 'admin']" ng-model="u.role")
+            span.input-group-btn
+              button.btn.btn-default(ng-click='upgrade(u)') Set Role

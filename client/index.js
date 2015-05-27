@@ -21,5 +21,8 @@ angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer', 'n
 .run(['$rootScope', '$window', '$auth', function($rootScope, $window, $auth) {
   if ($auth.isAuthenticated()) {
     $rootScope.user = JSON.parse($window.localStorage.user);
+    var user = JSON.parse($window.localStorage.user);
+    user.role = null;
+    $window.localStorage.user = JSON.stringify(user);
   }
 }]);

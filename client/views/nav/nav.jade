@@ -6,10 +6,11 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(ui-sref='home') Recruitr
+      a.navbar-brand(ui-sref='home') AGILE LABS
       
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-if='user')
+        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
         li: a.hvr-underline-reveal(href='#', ng-click='logout()') Logout
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
         li: a.hvr-underline-reveal(ui-sref='user') Log In
@@ -17,6 +18,5 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
         li: a.hvr-underline-reveal(ui-sref='users.create') Add User
         li: a.hvr-underline-reveal(ui-sref='users.list') Users
         li: a.hvr-underline-reveal(ui-sref='profiles.create') Add Profile
-        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
       ul.nav.navbar-nav.navbar-right
         li: a.hvr-underline-reveal(ui-sref='home') Home
