@@ -14,10 +14,9 @@ var profileSchema = mongoose.Schema({
   skills: {type: Array, required: true},
   exposed: Array,
   interests: Array,
-  github: String,
-  stackoverflow: String,
-  linkedin: String,
-  twitter: String,
+  github: {type: String, required: true},
+  linkedin: {type: String, required: true},
+  twitter: {type: String, required: true},
   createdAt: {type: Date, default: Date.now, required: true}
 });
 
