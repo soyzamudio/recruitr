@@ -1,33 +1,18 @@
 'use strict';
 
 angular.module('angular-prototype')
-.controller('UserEditController',
-['$rootScope', '$scope', '$auth', '$state', '$window',
-function($rootScope, $scope, $auth, $state, $window) {
+.controller('UserEditController', ['$scope', 'User', '$state', function($scope, User, $state) {
 
-  $scope.loginUser = function() {
-    // console.log('in');
-    $auth.login($scope.loginForm)
-    .then(login);
-  };
+  $scope.message = null;
 
-  $scope.signup = function() {
-    if ($scope.signupForm.pass === $scope.signupForm.veriPass) {
-      $auth.signup({
-        firstName: $scope.signupForm.firstName,
-        lastName: $scope.signupForm.lastName,
-        email: $scope.signupForm.email,
-        company: $scope.signupForm.company,
-        password: $scope.signupForm.pass
-      }).then(login);
+  $scope.changePassword = function() {
+    if ($scope.newForm.password === $scope.newForm.veripassword) {
+      User.changePassword($scope.newForm.password)
+      .then(function() {
+        $state.go('home');
+      });
+    } else {
+      $scope.message = 'Your password does not match. Please try again.';
     }
   };
-
-  function login(response) {
-    console.log(response);
-    $window.localStorage.user = JSON.stringify(response.data.user);
-    $rootScope.user = response.data.user;
-    $state.go('home');
-  }
-
 }]);

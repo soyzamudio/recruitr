@@ -3,18 +3,20 @@
 angular.module('angular-prototype')
 .factory('Profile', ['$http', function($http){
 
-  function createProfile(info) {
+  var Profile = {};
+
+  Profile.createProfile = function(info) {
     return $http.post('/profiles/create', info);
-  }
+  };
 
-  function getAll() {
+  Profile.getAll = function() {
     return $http.get('/profiles');
-  }
+  };
 
-  function getOne(info) {
+  Profile.getOne = function(info) {
     return $http.get('/profiles/' + info);
-  }
+  };
 
-  return {getAll:getAll, createProfile:createProfile, getOne:getOne};
+  return Profile;
 
 }]);

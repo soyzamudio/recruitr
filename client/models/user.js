@@ -3,21 +3,27 @@
 angular.module('angular-prototype')
   .factory('User', ['$http', function($http){
 
-    function getAll() {
+    var User = {};
+
+    User.getAll = function() {
       return $http.get('/users');
-    }
+    };
 
-    function createUser(info) {
+    User.createUser = function(info) {
       return $http.post('/users/create', info);
-    }
+    };
 
-    function upgrade(info) {
+    User.upgrade = function(info) {
       return $http.put('/users/upgrade', info);
-    }
+    };
 
-    function generatePassword() {
+    User.generatePassword = function() {
       return Math.random().toString(36).slice(-8);
-    }
+    };
 
-    return {getAll:getAll, createUser:createUser, upgrade:upgrade, generatePassword: generatePassword};
+    User.changePassword = function(pass) {
+      return $http.put('/users/change-password', {password: pass});
+    };
+
+    return User;
   }]);

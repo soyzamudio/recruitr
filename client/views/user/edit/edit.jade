@@ -1,1 +1,12 @@
-.page-header Change Password
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      .page-header Change Password
+      .alert.alert-danger(ng-if='message') {{message}}
+      form(ng-submit='changePassword()')
+        .form-group
+          input.form-control(type='password', ng-model='newForm.password', placeholder='Enter a new password')
+        .form-group
+          input.form-control(type='password', ng-model='newForm.veripassword', placeholder='Verify password')
+        .form-group
+          button.btn.btn-default.pull-right(ng-click='changePassword()') Change Password

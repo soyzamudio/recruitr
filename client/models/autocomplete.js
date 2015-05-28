@@ -3,10 +3,12 @@
 angular.module('angular-prototype')
 .factory('Autocomplete', ['$http', function($http){
 
-  function getAutocomplete() {
-    return $http.get('/autocomplete');
-  }
+  var Autocomplete = {};
 
-  return {getAutocomplete:getAutocomplete};
+  Autocomplete.getAutocomplete = function() {
+    return $http.get('/autocomplete');
+  };
+
+  return Autocomplete;
 
 }]);

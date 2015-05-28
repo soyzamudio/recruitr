@@ -33,6 +33,10 @@ userSchema.statics.register = function(o, cb){
   });
 };
 
+userSchema.methods.hashPass = function(pass) {
+  return bcrypt.hashSync(pass, 8);
+};
+
 userSchema.statics.authenticate = function(o, cb){
   User.findOne({email:o.email}, function(err, user){
     if (!user) {return cb(true);}
