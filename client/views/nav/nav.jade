@@ -11,7 +11,7 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-if='user')
         li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
-        li: a.hvr-underline-reveal(href='#', ng-click='logout()') Logout
+        li: a.hvr-underline-reveal(href='#', ng-click='logout()') {{user.email}}
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
         li: a.hvr-underline-reveal(ui-sref='user') Log In
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')
