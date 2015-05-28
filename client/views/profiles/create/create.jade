@@ -1,36 +1,51 @@
-h4 Required:
-.form-group
-  input.form-control(type='text', ng-model='student.firstName', placeholder='First Name')
-.form-group
-  input.form-control(type='text', ng-model='student.lastName', placeholder='Last Name')
-.form-group
-  input.form-control(type='text', ng-model='student.location', placeholder='Location')
-.form-group
-  input.form-control(type='text', ng-model='student.skills', placeholder='Skills')
 
+h4 Required:
+.container-fluid
+  .row
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.firstName', placeholder='First Name', autofocus)
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.lastName', placeholder='Last Name')
+  .row
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.location', placeholder='Location')
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.twitter', placeholder='Twitter')
+  .row
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.github', placeholder='Github')
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.linkedin', placeholder='LinkedIn')
+  .row
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.skills', placeholder='Skills')
 h4 Extras:
 
-.form-group
-  input.form-control(type='text', ng-model='student.exposed', placeholder='Exposed')
-.form-group
-  input.form-control(type='text', ng-model='student.interests', placeholder='Interests')
-.form-group
-  input.form-control(type='text', ng-model='student.github', placeholder='Github')
-.form-group
-  input.form-control(type='text', ng-model='student.linkedin', placeholder='LinkedIn')
-.form-group
-  input.form-control(type='text', ng-model='student.stackoverflow', placeholder='Stackoverflow')
-.form-group
-  input.form-control(type='text', ng-model='student.twitter', placeholder='Twitter')
-.form-group
-  textarea.form-control(rows='5', cols='30' ng-model='student.summary', placeholder='Summary')
+.container-fluid
+  .row
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.exposed', placeholder='Exposed')
+    .col-xs-12.col-sm-6
+      .form-group
+        input.form-control(type='text', ng-model='student.interests', placeholder='Interests')
+    .col-xs-12
+      .form-group
+        textarea.form-control(rows='5', ng-model='student.summary', placeholder='Summary')
 
-.form-group
-  input(type='file' ng-model='student.image' base-sixty-four-input)
-  img(base-sixty-four-image="student.image")
 .form-group
   label Relocation?
   input(type='checkbox', ng-model='student.relocate')
+.form-group
+  input(type='file' ng-model='student.image' base-sixty-four-input)
+  img(base-sixty-four-image="student.image")
 .form-group
   button.btn.btn-default.pull-right(ng-click='createProfile()') Create Profile
 
