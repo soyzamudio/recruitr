@@ -23,9 +23,7 @@ h4 Extras:
 .form-group
   input.form-control(type='text', ng-model='student.twitter', placeholder='Twitter')
 .form-group
-  input.form-control(type='text', ng-model='student.summary', placeholder='Summary')
-.form-group
-  input.form-control(type='text', ng-model='student.experience', placeholder='Experience')
+  textarea.form-control(rows='5', cols='30' ng-model='student.summary', placeholder='Summary')
 
 .form-group
   input(type='file' ng-model='student.image' base-sixty-four-input)
