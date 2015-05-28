@@ -6,7 +6,10 @@ angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer', 'n
 
   $stateProvider
   .state('home', {url:'/', templateUrl:'/views/general/home.html', controller: 'HomeController'})
-  .state('user', {url:'/user', templateUrl:'/views/user/user.html', controller: 'UserController'})
+
+  .state('user', {url:'/user', templateUrl:'/views/user/user.html', abstract: true})
+  .state('user.login', {url: '/login', templateUrl: '/views/user/login/login.html', controller: 'UserLoginController'})
+  .state('user.edit', {url: '/edit', templateUrl: '/views/user/edit/edit.html', controller: 'UserEditController'})
 
   .state('profiles', {url: '/profiles', templateUrl:'/views/profiles/profiles.html', abstract: true})
   .state('profiles.create', {url: '/create', templateUrl:'/views/profiles/create/create.html', controller: 'ProfilesCreateController'})

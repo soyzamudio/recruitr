@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angular-prototype')
-.controller('UserController',
+.controller('UserEditController',
 ['$rootScope', '$scope', '$auth', '$state', '$window',
 function($rootScope, $scope, $auth, $state, $window) {
 

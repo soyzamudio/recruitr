@@ -1,11 +1,15 @@
 .row#top
-  .col-md-4.col-md-offset-4
+  .col-md-6.col-md-offset-3
     .col-md-12.text-center
-      img(src='../../assets/img/logo-tagline-white.png', height='200', width='auto')
+      //- img(src='../../assets/img/logo-tagline-white.png', height='200', width='auto')
+      h1.title AGILE LABS
+      h3.subtitle Staffing From The Source
+    .col-md-12.text-center(ng-if='!user')
+      .col-md-8.less-padding
+        .form-group
+          input.form-control(type='text', ng-model='email', placeholder='Enter your email')
+      .col-md-4.less-padding
+        .form-group
+          button.btn.btn-success(ng-click='createAccount(email)') browse local developers
     .col-md-12.text-center
-      .input-group(ng-if='!user')
-        input.form-control(type='text', ng-model='email', placeholder='Enter your email')
-        span.input-group-btn
-          button.btn.btn-default(ng-click='createAccount(email)') View Profiles
-    .col-md-12.text-center
-      a.btn.btn-default(ng-if='user', ui-sref='profiles.list') View Profiles
+      a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
