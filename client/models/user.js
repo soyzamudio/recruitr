@@ -21,8 +21,8 @@ angular.module('angular-prototype')
       return Math.random().toString(36).slice(-8);
     };
 
-    User.changePassword = function(pass) {
-      return $http.put('/users/change-password', {password: pass});
+    User.editUser = function(info) {
+      return $http.put('/user/edit', info);
     };
 
     return User;

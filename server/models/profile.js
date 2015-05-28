@@ -10,7 +10,7 @@ var profileSchema = mongoose.Schema({
   location: String,
   relocate: Boolean,
   summary: String,
-  experience: [Object],
+  experience: Array,
   skills: {type: Array, required: true},
   exposed: Array,
   interests: Array,

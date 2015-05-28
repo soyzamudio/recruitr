@@ -17,6 +17,10 @@ angular.module('angular-prototype')
     return $http.get('/profiles/' + info);
   };
 
+  Profile.editProfile = function(profile) {
+    return $http.put('/profiles/' + profile._id + '/edit', profile)
+  }
+
   return Profile;
 
 }]);

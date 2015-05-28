@@ -11,9 +11,11 @@ angular.module('angular-prototype')
     admin: '='
   };
   o.link = function() {};
-  o.controller = ['$scope', '$state', function($scope, $state) {
+  o.controller = ['$scope', '$state', 'Profile', function($scope, $state, Profile) {
     $scope.super = false;
     $scope.normal = true;
+    $scope.exp = false;
+
     checkViewer($scope.admin.role);
     function checkViewer(role) {
       switch (role) {
@@ -27,6 +29,20 @@ angular.module('angular-prototype')
     $scope.available = function(link) {
       return link ? link : '#';
     };
+
+    $scope.activeExperience = function() {
+      $scope.exp = !$scope.exp;
+    };
+
+    $scope.addExperience = function(experience) {
+      $scope.userProfile.experience.push(experience);
+      Profile.editProfile($scope.userProfile)
+      .then(function(response) {
+        $scope.newExperience = {};
+        $scope.exp = false;
+      });
+    };
+
   }];
 
   return o;

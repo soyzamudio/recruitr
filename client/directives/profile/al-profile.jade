@@ -1,4 +1,4 @@
-.container(ng-cloak)
+.container
   .row
     .col-md-1.text-center
       div(ng-if='list[index - 1]')
@@ -48,14 +48,24 @@
           
       .col-md-12#experience
         .page-header Experience
-        div(ng-class='{blur: !super}')
-          h3 Title
-          h5 Company
-          p Ad deserunt aliqua enim velit tempor. Consectetur amet laboris ipsum voluptate pariatur et ut. Sint anim velit pariatur qui ex magna labore eu anim cillum. Reprehenderit occaecat incididunt aute duis anim ea ex incididunt sint cillum anim magna. Culpa in ex ad sunt officia ad laboris voluptate magna ad ipsum enim. Mollit adipisicing do voluptate anim esse occaecat irure amet duis. Qui culpa tempor qui voluptate velit.
-          h3 Title
-          h5 Company
-          p Ad deserunt aliqua enim velit tempor. Consectetur amet laboris ipsum voluptate pariatur et ut. Sint anim velit pariatur qui ex magna labore eu anim cillum. Reprehenderit occaecat incididunt aute duis anim ea ex incididunt sint cillum anim magna. Culpa in ex ad sunt officia ad laboris voluptate magna ad ipsum enim. Mollit adipisicing do voluptate anim esse occaecat irure amet duis. Qui culpa tempor qui voluptate velit.
-
+          button.btn.btn-default.btn-xs.pull-right(ng-if='admin.role === "admin"', ng-click='activeExperience()') Add
+        form(ng-if='exp')
+          .form-group
+            input.form-control(type='text', placeholder='Title', ng-model='newExperience.title')
+          .form-group
+            input.form-control(type='text', placeholder='Company', ng-model='newExperience.company')
+          .form-group
+            textarea.form-control(row='3', placeholder='Summary', ng-model='newExperience.summary')
+          .form-group
+            button.btn.btn-default(ng-click='addExperience(newExperience)') Add Experience
+        div(ng-if='userProfile.experience', ng-repeat='experience in userProfile.experience')
+          h3 {{experience.title}}
+          h4 {{experience.company}}
+          p {{experience.summary}}
+        div(ng-if='!userProfile.experience', ng-class='{blur: !super}')
+          h3 Contact Us
+          h4 For More Information
+          p Please contact us in order to view more information about this profile. 
         
       .col-md-12#portfolio
         .page-header Portfolio

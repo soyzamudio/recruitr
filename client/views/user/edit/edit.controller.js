@@ -7,7 +7,7 @@ angular.module('angular-prototype')
 
   $scope.changePassword = function() {
     if ($scope.newForm.password === $scope.newForm.veripassword) {
-      User.changePassword($scope.newForm.password)
+      User.editUser({password: $scope.newForm.password})
       .then(function() {
         $state.go('home');
       });
