@@ -14,30 +14,29 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
         li.dropdown
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') 
             i.fa.fa-cogs.fa-lg
-            span.caret
           ul.dropdown-menu(role='menu')
-            li: a.hvr-underline-reveal(href='#') {{user.email}}
+            li: a {{user.email}}
             li.divider
-            li: a.hvr-underline-reveal(href='#', ng-click='logout()') Logout
-            li: a.hvr-underline-reveal(ui-sref='user.edit') Change Password
+            li: a(ui-sref='user.edit') Change Password
+            li: a(href='#', ng-click='logout()') Logout
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "super" || user.role === "normal"')
-        li: a.hvr-underline-reveal(ui-sref='profiles.list') Profiles
+        li: a(ui-sref='profiles.list') Profiles
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
-        li: a.hvr-underline-reveal(ui-sref='user.login') Log In
+        li: a(ui-sref='user.login') Log In
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')
         //- Profile Admin Dropdown
         li.dropdown
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Profiles
             span.caret
           ul.dropdown-menu(role='menu')
-            li: a.hvr-underline-reveal(ui-sref='profiles.create') Add Profile
-            li: a.hvr-underline-reveal(ui-sref='profiles.list') Show Profiles
+            li: a(ui-sref='profiles.create') Add Profile
+            li: a(ui-sref='profiles.list') Show Profiles
         //- User Admin Dropdown
         li.dropdown
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Users
             span.caret
           ul.dropdown-menu(role='menu')
-            li: a.hvr-underline-reveal(ui-sref='users.create') Add User
-            li: a.hvr-underline-reveal(ui-sref='users.list') Show Users
+            li: a(ui-sref='users.create') Add User
+            li: a(ui-sref='users.list') Show Users
       ul.nav.navbar-nav.navbar-right
-        li: a.hvr-underline-reveal(ui-sref='home') Home
+        li: a.hvr-underline-from-center(ui-sref='home') Home
