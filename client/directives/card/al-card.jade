@@ -5,5 +5,5 @@
     h4 {{profile.firstName}}
     h6
       span.skill(ng-repeat='skill in profile.skills') {{skill}}
-    h4
+    h4(ng-if='!spotlight')
       button.btn.btn-default.btn-sm(ng-click='goToProfile(profile, index, list)') View Full Profile

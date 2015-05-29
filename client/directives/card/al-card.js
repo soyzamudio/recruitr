@@ -9,7 +9,8 @@ angular.module('angular-prototype')
   o.scope = {
     profile: '=',
     index: '=',
-    list: '='
+    list: '=',
+    spotlight: '='
   };
   o.link = function() {};
   o.controller = ['$scope', '$state', function($scope, $state) {

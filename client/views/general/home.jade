@@ -20,7 +20,7 @@
   h3.text-center Spotlight
   .row
     .col-md-4(ng-repeat='profile in profiles')
-      .text-capitalize(al-card, profile='profile', index='$index.toString()', list='profiles')
+      .text-capitalize(al-card, profile='profile', index='$index.toString()', list='profiles', spotlight='true')
 
 .row.hidden-xs.hidden-md#browse
   .col-md-6.col-md-offset-3
@@ -57,7 +57,7 @@
         p VP of Resource Development
         
         
-.row.row-eq-height.visible-md-block.hidden-md#aboutUs
+.row.row-eq-height.hidden-xs.hidden-md#aboutUs
   .col-md-4.who
     .col-md-12
       h3 WHO WE ARE
