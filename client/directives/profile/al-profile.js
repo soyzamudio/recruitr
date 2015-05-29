@@ -37,7 +37,7 @@ angular.module('angular-prototype')
     $scope.addExperience = function(experience) {
       $scope.userProfile.experience.push(experience);
       Profile.editProfile($scope.userProfile)
-      .then(function(response) {
+      .then(function() {
         $scope.newExperience = {};
         $scope.exp = false;
       });

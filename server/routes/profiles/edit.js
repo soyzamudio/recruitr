@@ -7,6 +7,6 @@ module.exports = {
     Profile.findOneAndUpdate({_id: request.payload._id}, request.payload, function(err, profile) {
       if (err) { console.log(err); reply().code(400); }
       else { reply({profile: profile}); }
-    })
+    });
   }
 };

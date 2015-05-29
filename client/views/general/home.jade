@@ -4,25 +4,27 @@
       //- img(src='../../assets/img/logo-tagline-white.png', height='200', width='auto')
       h1.title AGILE LABS
       h3.subtitle Staffing From The Source
-    .col-md-12.text-center(ng-if='!user')
-      .col-md-8.less-padding
-        .form-group
-          input.form-control(type='text', ng-model='email', placeholder='Enter your email')
-      .col-md-4.less-padding
-        .form-group
-          button.btn.btn-success(ng-click='createAccount(email)') browse local developers
-    .col-md-12.text-center
-      a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
+      .col-md-12.text-center(ng-if='!user')
+        form(ng-submit='createAccount(email)')
+          .col-md-8.less-padding
+            .form-group
+              input.form-control(type='text', ng-model='email', placeholder='Enter your email', required)
+          .col-md-4.less-padding
+            .form-group
+              button.btn.btn-success(ng-click='createAccount(email)') browse local developers
+      .col-md-12.text-center
+        a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
 
 .row#browse
   .col-md-6.col-md-offset-3
     .col-md-12.text-center(ng-if='!user')
-      .col-md-8.less-padding
-        .form-group
-          input.form-control(type='text', ng-model='email', placeholder='Enter your email')
-      .col-md-4.less-padding
-        .form-group
-          button.btn.btn-success(ng-click='createAccount(email)') browse local developers
+      form(ng-submit='createAccount(email)')
+        .col-md-8.less-padding
+          .form-group
+            input.form-control(type='text', ng-model='email', placeholder='Enter your email', required)
+        .col-md-4.less-padding
+          .form-group
+            button.btn.btn-success(ng-click='createAccount(email)') browse local developers
     .col-md-12.text-center
       a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
     
@@ -64,6 +66,35 @@
       h3 WHY CHOOSE US?
       p Coding House only accepts 3% of students that apply. All students must pass a series of competency test to move on to each week of the program. The screening process is rigorous because we understand being a quality software developer requires a high level of drive, energy, and the desire to learn every day. All students have been screened for motivation, background check, credit check and pre-employment competencies. The students that are accepted to Coding House are already on the path to becoming a great developer - we just provide them a catalyst to jump start their careers. Let us know which of our developers fits your current hiring needs.
       i.fa.fa-question.bgicon
+      
+.row#contact
+  .container
+    .row.text-center
+      h3 Send us a message
+    form(ng-submit='contactUs(email)', name='contactForm')
+      .col-md-4
+        .form-group
+          label(for='name') Name *
+          input.form-control(type='text', name='name', ng-model='email.name', placeholder='Name', required)
+      .col-md-4
+        .form-group
+          label(for='email') Email *
+          input.form-control(type='email', name='email', ng-model='email.email', placeholder='Email', required)
+      .col-md-4
+        .form-group
+          label(for='phone') Phone
+          input.form-control(type='text', name='phone', ng-model='email.phone', placeholder='Phone Number')
+      .col-md-12
+        .form-group
+          label(for='subject') Subject *
+          input.form-control(type='text', name='subject', ng-model='email.subject', placeholder='Subject', required)
+      .col-md-12
+        .form-group
+          label(for='message') Message *
+          textarea.form-control(rows='4', name='message', ng-model='email.message', placeholder='Message', required)
+      .col-md-12
+        .form-group
+          button.btn.btn-success(ng-disabled='contactForm.$invalid', ng-click='contactUs(email)') submit
 
 .row#footer
   .container
