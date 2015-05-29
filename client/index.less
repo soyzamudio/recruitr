@@ -21,11 +21,27 @@ body {
   user-select: none;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
 // HOME PAGE STYLE
 
 #top {
+  background: #006da0;
+  background: #006da0;
+  background: -moz-linear-gradient(-45deg,  #006da0 0%, #007cb4 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#006da0), color-stop(100%,#007cb4));
+  background: -webkit-linear-gradient(-45deg,  #006da0 0%,#007cb4 100%);
+  background: -o-linear-gradient(-45deg,  #006da0 0%,#007cb4 100%);
+  background: -ms-linear-gradient(-45deg,  #006da0 0%,#007cb4 100%);
+  background: linear-gradient(135deg,  #006da0 0%,#007cb4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006da0', endColorstr='#007cb4',GradientType=1 );
+
   margin-top: -20px;
-  background: #007CB4;
   padding-top: 10%;
   padding-bottom: 12.5%;
 
@@ -52,6 +68,71 @@ body {
   }
 }
 
+#browse {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+#team {
+  padding-bottom: 5%;
+  h3 {
+    padding-top: 2.5%;
+    margin-bottom: 25px;
+  }
+
+  img {
+    height: 200px;
+    width: auto;
+  }
+
+  p {
+    font-weight: 700;
+    color: #00B546;
+  }
+}
+
+#aboutUs {
+  color: white;
+  text-align: justify;
+  overflow: hidden;
+  h3 {
+    color: white;
+  }
+  p {
+    line-height: 200%;
+  }
+  .col-md-12 {
+    padding: 25px;
+  }
+  .who {
+    background: #00BC9E;
+  }
+
+  .our {
+    background: #32495C;
+  }
+
+  .us {
+    background: #EC4941;
+  }
+
+  .bgicon {
+    display: block;
+    position: absolute;
+    bottom: -125px;
+    right: -25px;
+    font-size: 210px;
+    color: rgba(0,0,0,0.1);
+  }
+}
+
+#footer {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: #282828;
+  color: white;
+}
 // PROFILE LIST STYLE
 
 .card {
@@ -145,6 +226,7 @@ body {
   height: 50px;
   width: auto;
 }
+
 
 /* **************************** */
 /* *********Hover.css********** */

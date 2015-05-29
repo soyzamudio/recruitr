@@ -20,7 +20,7 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
             li: a(ui-sref='user.edit') Change Password
             li: a(href='#', ng-click='logout()') Logout
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "super" || user.role === "normal"')
-        li: a(ui-sref='profiles.list') Profiles
+        li: a.hvr-underline-from-center(ui-sref='profiles.list') Profiles
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
         li: a(ui-sref='user.login') Log In
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')

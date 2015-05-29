@@ -13,3 +13,65 @@
           button.btn.btn-success(ng-click='createAccount(email)') browse local developers
     .col-md-12.text-center
       a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
+
+.row#browse
+  .col-md-6.col-md-offset-3
+    .col-md-12.text-center(ng-if='!user')
+      .col-md-8.less-padding
+        .form-group
+          input.form-control(type='text', ng-model='email', placeholder='Enter your email')
+      .col-md-4.less-padding
+        .form-group
+          button.btn.btn-success(ng-click='createAccount(email)') browse local developers
+    .col-md-12.text-center
+      a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
+    
+.row#team
+  .container
+    .row.text-center
+      h3 The Team
+      .col-md-3
+        img.img-circle(src='../../assets/img/jeff.jpg')
+        h3 Jeff Dunn
+        p CEO
+      .col-md-3
+        img.img-circle(src='../../assets/img/nick.jpg')
+        h3 Nicholas James
+        p CVO
+      .col-md-3
+        img.img-circle(src='../../assets/img/aj.jpg')
+        h3 AJ Funk
+        p VP of Operations
+      .col-md-3
+        img.img-circle(src='../../assets/img/samer.jpg')
+        h3 Samer Buna
+        p VP of Resource Development
+        
+        
+.row.row-eq-height#aboutUs
+  .col-md-4.who
+    .col-md-12
+      h3 WHO WE ARE
+      p Agile Labs is a developer marketplace where consistent, quality developers are ready to join your team. Agile Labs is the staffing/placement division of the Coding House Institute, a twelve week, full immersion, live in, development boot camp in which cohorts do nothing but collaborate and code - all day, every day. We are partnered with companies in Silicon Valley to provide an avenue to streamline their search for talent. We look forward to providing you with the talent you need.
+      i.fa.fa-user.bgicon
+  .col-md-4.our
+    .col-md-12
+      h3 OUR VALUE
+      p Every student graduating from Coding House is coding at a junior level and has completed multiple projects in which they have collaborated with team sizes ranging from two to ten. By having new graduates ready for the work force every six to twelve weeks, we are making your search for talent less cumbersome so you can focus more time on the growth of your company. Whether you need contract work or a full time employee, Agile Labs is positioned to provide you with quality developers.
+      i.fa.fa-diamond.bgicon
+  .col-md-4.us
+    .col-md-12
+      h3 WHY CHOOSE US?
+      p Coding House only accepts 3% of students that apply. All students must pass a series of competency test to move on to each week of the program. The screening process is rigorous because we understand being a quality software developer requires a high level of drive, energy, and the desire to learn every day. All students have been screened for motivation, background check, credit check and pre-employment competencies. The students that are accepted to Coding House are already on the path to becoming a great developer - we just provide them a catalyst to jump start their careers. Let us know which of our developers fits your current hiring needs.
+      i.fa.fa-question.bgicon
+
+.row#footer
+  .container
+    .row
+      .col-md-6
+        p Agile Labs © 2015, All Rights Reserved
+        p Terms of Service / Privacy Policy
+      .col-md-6.text-right
+        P 
+          i.fa.fa-envelope-o &nbsp; info@agilelabs.com • &nbsp;
+          i.fa.fa-phone &nbsp; (650) 566-1000
