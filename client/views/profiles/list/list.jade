@@ -7,5 +7,8 @@
           span.glyphicon.glyphicon-search
 
 .container
-  .row 
-    .text-capitalize(al-card, ng-repeat='profile in profiles | filter:searchBar track by $index', profile='profile', index='$index.toString()', list='profiles')
+  dir-pagination-controls
+  .row
+    div(dir-paginate="profile in profiles | filter:searchBar | itemsPerPage: 4 track by $index")
+      .text-capitalize(al-card, profile='profile', index='$index.toString()', list='profiles')
+  

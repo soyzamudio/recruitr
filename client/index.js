@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angular-prototype', ['ui.router', 'ngMessages', 'satellizer', 'naif.base64'])
+angular.module('angular-prototype', ['ui.router', 'angularUtils.directives.dirPagination', 'ngMessages', 'satellizer', 'naif.base64'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
