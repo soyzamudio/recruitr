@@ -11,4 +11,3 @@
   .row
     div(dir-paginate="profile in profiles | filter:searchBar | itemsPerPage: 12 track by $index")
       .text-capitalize(al-card, profile='profile', index='$index.toString()', list='profiles')
-  
