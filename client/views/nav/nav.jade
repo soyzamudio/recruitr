@@ -22,7 +22,7 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "super" || user.role === "normal"')
         li: a.hvr-underline-from-center(ui-sref='profiles.list') Profiles
       ul.nav.navbar-nav.navbar-right(ng-if='!user')
-        li: a(ui-sref='user.login') Log In
+        li: a.hvr-underline-from-center(ui-sref='user.login') Log In
       ul.nav.navbar-nav.navbar-right(ng-if='user.role === "admin"')
         //- Profile Admin Dropdown
         li.dropdown
