@@ -9,10 +9,11 @@
         th Email
         th Role
     tbody
-      tr(ng-repeat='u in users | filter: {email: searchBar}') 
+      tr(ng-repeat='u in users | filter: {email: searchBar}')
         td(style='width: 60%') {{u.email}}
         td(style='width: 40%')
           .input-group
             select.form-control.text-capitalize(ng-options="item for item in ['normal', 'super', 'admin']" ng-model="u.role")
             span.input-group-btn
-              button.btn.btn-default(ng-click='upgrade(u)') Set Role
+              button.btn.btn-success(ng-click='upgrade(u)') Set Role
+              button.btn.btn-danger(ng-click='destroy(u._id)') Delete

@@ -25,5 +25,9 @@ angular.module('angular-prototype')
       return $http.put('/user/edit', info);
     };
 
+    User.destroy = function(userId) {
+      return $http.delete('/users/' + userId + '/destroy');
+    };
+
     return User;
   }]);
