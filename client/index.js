@@ -14,6 +14,7 @@ angular.module('angular-prototype', ['ui.router', 'angularUtils.directives.dirPa
   .state('profiles', {url: '/profiles', templateUrl:'/views/profiles/profiles.html', abstract: true})
   .state('profiles.create', {url: '/create', templateUrl:'/views/profiles/create/create.html', controller: 'ProfilesCreateController'})
   .state('profiles.list', {url: '', templateUrl:'/views/profiles/list/list.html', controller: 'ProfilesListController'})
+  .state('profiles.edit', {url: '/{profileId}/edit/', templateUrl: '/views/profiles/edit/edit.html', controller: 'ProfilesEditController'})
   .state('profiles.show', {url: '/{userId}', params: { index: null, list: null }, templateUrl:'/views/profiles/show/show.html', controller: 'ProfilesShowController'})
 
   .state('users', {url: '/users', templateUrl:'/views/users/users.html', abstract: true})
