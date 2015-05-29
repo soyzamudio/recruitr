@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var random = require('mongoose-simple-random');
 var Profile;
 
 var profileSchema = mongoose.Schema({
@@ -19,6 +20,8 @@ var profileSchema = mongoose.Schema({
   twitter: {type: String, required: true},
   createdAt: {type: Date, default: Date.now, required: true}
 });
+
+profileSchema.plugin(random);
 
 Profile = mongoose.model('Profile', profileSchema);
 module.exports = Profile;

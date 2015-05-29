@@ -16,8 +16,8 @@ angular.module('angular-prototype')
     User.destroy(userId)
     .then(function(){
       getAll();
-    })
-  }
+    });
+  };
 
   $scope.upgrade = function(user) {
     User.upgrade(user);

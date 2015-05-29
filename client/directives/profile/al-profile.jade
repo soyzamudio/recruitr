@@ -1,11 +1,11 @@
 .container
   .row
     .col-md-1.text-center
-      div(ng-if='list[index - 1]')
+      .hidden-xs.hidden-md(ng-if='list[index - 1]')
         img.img-circle.carousel-image(base-sixty-four-image='list[index - 1].image')
         h6: a(ui-sref='profiles.show({userId: list[index - 1]._id, index: (index - 1).toString(), list: list})'): strong Prev
+        
     .col-md-10
-    
       .col-md-12
         .col-md-3.text-center#photo
           img.img-circle(base-sixty-four-image="userProfile.image")
@@ -67,10 +67,10 @@
           h4 For More Information
           p Please contact us in order to view more information about this profile. 
         
-      .col-md-12#portfolio
-        .page-header Portfolio
+      //- .col-md-12#portfolio
+        //- .page-header Portfolio
         
     .col-md-1.text-center
-      div(ng-if='list[index + 1]')
+      .hidden-xs.hidden-md(ng-if='list[index + 1]')
         img.img-circle.carousel-image(base-sixty-four-image='list[index + 1].image')
         h6: a(ui-sref='profiles.show({userId: list[index + 1]._id, index: (index + 1).toString(), list: list})'): strong Next

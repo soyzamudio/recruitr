@@ -21,6 +21,10 @@ angular.module('angular-prototype')
     return $http.put('/profiles/' + profile._id + '/edit', profile);
   };
 
+  Profile.spotlight = function() {
+    return $http.get('/profiles/spotlight');
+  };
+
   return Profile;
 
 }]);

@@ -17,12 +17,12 @@ angular.module('angular-prototype')
           }
         ],
         'autotext': 'true',
-        'subject':  name + " - " + subject,
+        'subject':  name + ' - ' + subject,
         'html':     message
       }
     };
     return $http({
-      method: "POST",
+      method: 'POST',
       url: 'https://mandrillapp.com/api/1.0/messages/send.json',
       headers: {'Authorization':null},
       data: data

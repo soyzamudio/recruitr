@@ -1,10 +1,9 @@
-.col-md-3
-  .card
-    .avatar
-      img(base-sixty-four-image="profile.image")
-    .content
-      h4 {{profile.firstName}}
-      h6
-        span.skill(ng-repeat='skill in profile.skills') {{skill}}
-      h4
-        button.btn.btn-default.btn-sm(ng-click='goToProfile(profile, index, list)') View Full Profile
+.card
+  .avatar
+    img(base-sixty-four-image="profile.image")
+  .content
+    h4 {{profile.firstName}}
+    h6
+      span.skill(ng-repeat='skill in profile.skills') {{skill}}
+    h4
+      button.btn.btn-default.btn-sm(ng-click='goToProfile(profile, index, list)') View Full Profile

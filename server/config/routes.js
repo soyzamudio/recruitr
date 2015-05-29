@@ -15,6 +15,7 @@ module.exports = [
   {method: 'get', path: '/profiles/{userId}', config: require('../routes/profiles/show')},
   {method: 'post', path: '/profiles/create', config: require('../routes/profiles/create')},
   {method: 'put', path: '/profiles/{userId}/edit', config: require('../routes/profiles/edit')},
+  {method: 'get', path: '/profiles/spotlight', config: require('../routes/profiles/spotlight')},
 
   {method: 'get', path: '/autocomplete', config: require('../routes/autocomplete/index')}
 ];

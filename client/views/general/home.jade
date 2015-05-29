@@ -17,10 +17,12 @@
         a.btn.btn-success(ng-if='user', ui-sref='profiles.list') browse local developers
 
 .container#spotlight
+  h3.text-center Spotlight
   .row
-    .col-md-4
+    .col-md-4(ng-repeat='profile in profiles')
+      .text-capitalize(al-card, profile='profile', index='$index.toString()', list='profiles')
 
-.row#browse
+.row.hidden-xs.hidden-md#browse
   .col-md-6.col-md-offset-3
     .col-md-12.text-center(ng-if='!user')
       form(ng-submit='createAccount(email)')
@@ -55,7 +57,7 @@
         p VP of Resource Development
         
         
-.row.row-eq-height#aboutUs
+.row.row-eq-height.visible-md-block.hidden-md#aboutUs
   .col-md-4.who
     .col-md-12
       h3 WHO WE ARE
