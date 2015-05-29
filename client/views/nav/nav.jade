@@ -7,13 +7,12 @@ nav.navbar.navbar-default.navbar-static-top(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
       a.navbar-brand(ui-sref='home') AGILE LABS
-      
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-if='user.role')
         //- User Options Dropdown
         li.dropdown
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') 
-            i.fa.fa-cogs.fa-lg
+            i.fa.fa-cog.fa-lg
           ul.dropdown-menu(role='menu')
             li: a {{user.email}}
             li.divider
