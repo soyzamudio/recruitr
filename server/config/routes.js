@@ -9,6 +9,7 @@ module.exports = [
   {method: 'post', path: '/users/create', config: require('../routes/users/create')},
   {method: 'get', path: '/users', config: require('../routes/users/index')},
   {method: 'put', path: '/users/upgrade', config: require('../routes/users/upgrade')},
+  {method: 'delete', path: '/users/{userId}/destroy', config: require('../routes/users/destroy')},
 
   {method: 'get', path: '/profiles', config: require('../routes/profiles/index')},
   {method: 'get', path: '/profiles/{userId}', config: require('../routes/profiles/show')},
